@@ -1,0 +1,7 @@
+.event-list{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-inline: auto; 
+  margin-block: 5rem; 
+}

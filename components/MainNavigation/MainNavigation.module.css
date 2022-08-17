@@ -1,0 +1,23 @@
+.header{
+  background-color: #1e1e1e; 
+  padding: 2rem;
+}
+
+.header ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 110rem;
+  width: 85vw;
+  margin: auto;
+  font-size: 1.6rem;
+}
+
+.logo{
+  font-size: 3.2rem;
+  color: #5ed7d7;
+}
+
+.logo + li{
+  color: #03b8b8;
+}
