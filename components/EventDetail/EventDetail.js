@@ -6,12 +6,12 @@ function EventDetail(props) {
   return (
     <main className={classes["detail-wrapper"]}>
       <section className={classes.heading}>
-        <h1>Programming for everyone</h1>
+        <h1>{props.name}</h1>
       </section>
       <section >
         <div className={classes.detail}>
           <div className={classes['detail-left']}>
-            <Image src="/assets/pro.jpg" width="180" height="180" /> 
+            <Image src={`/assets/${props.id}.jpg`} width="180" height="180" /> 
           </div>
           <div className={classes['detail-right']}>
             <span className={classes["date"]}>
@@ -22,18 +22,18 @@ function EventDetail(props) {
               >
                 <g
                   fill="none"
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   stroke="#06a97d"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   transform="translate(1 1)"
                 >
                   <rect width="18" height="18" y="2" rx="2" />
                   <path d="M13 0v4M5 0v4M0 8h18" />
                 </g>
               </svg>
-              May 12, 2021
+              {props.date}
             </span>
             <div className={classes["address"]}>
               <svg
@@ -48,17 +48,15 @@ function EventDetail(props) {
                 </g>
               </svg>
               <address>
-                <span>Somestreet 25</span>
-                <span>12345 San Somewhereo</span>
+                <span>{props.street}</span>
+                <span>{props.city}</span>
               </address>
             </div>
           </div>
         </div>
 
         <p>
-          Everyone can learn to code! Yes, everyone! In this live event, we are
-          going to go through all the key basics and get you started with
-          programming as well.
+          {props.description}
         </p>
       </section>
     </main>

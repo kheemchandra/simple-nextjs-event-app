@@ -1,19 +1,33 @@
-import classes from './FilterEvent.module.css';
+import { useRef } from 'react';
+
+import classes from './FilterForm.module.css';
 
 function FilterEvent(props) {
-  return <form className={classes.filter}>
+  const selectedYearRef = useRef();
+  const selectedMonthRef = useRef();
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    const selectedYear = selectedYearRef.current.value;
+    const selectedMonth = selectedMonthRef.current.value;
+    
+    props.onFilter({year: selectedYear, month: selectedMonth})
+  }
+
+  return <form onSubmit={submitHandler} className={classes.filter}>
   <div>
-    <label for="year">Year</label>
-    <select id="year">
+    <label htmlFor="yearSelect">Year</label>
+    <select id="yearSelect" defaultValue='2021' ref={selectedYearRef}>
       <option value="2022">2022</option>
-      <option value="2021" selected>2021</option>
+      <option value="2021">2021</option>
       <option value="2020">2020</option>
       <option value="2019">2019</option> 
   </select>
   </div>
   <div>
-    <label for="month">Month</label>
-    <select id="month">
+    <label htmlFor="monthSelect">Month</label>
+    <select id="monthSelect" ref={selectedMonthRef}>
       <option value="January">January</option>
       <option value="February">February</option>
       <option value="March">March</option>

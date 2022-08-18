@@ -54,16 +54,10 @@
   gap: .5rem;
 }
 
-.event-item button{ 
-  background-color: #06a97d;
-  color: #aefefe;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: .5rem;
+.event-item button{
   margin-left: auto;
-  cursor: pointer;
 }
-
+ 
 @media screen and (max-width: 760px){
     .event-detail{
       gap: .8rem;

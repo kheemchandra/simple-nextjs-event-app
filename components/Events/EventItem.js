@@ -1,14 +1,15 @@
+import { useRouter } from "next/router";
 import Image from "next/image";
 
 import classes from "./EventItem.module.css";
 
 function EventItem(props) {
+  const router = useRouter();
+
   return (
     <li className={classes["event-item"]}>
       <div className={classes.image}>
-        {props.id === 'e1' && <Image src="/assets/in.jpg" width='180' height='180' />}
-        {props.id === 'e2' && <Image src="/assets/ex.jpg" width='200' height='200' />}
-        {props.id === 'e3' && <Image src="/assets/pro.jpg" width='200' height='200' />} 
+        <Image src={`/assets/${props.id}.jpg`} width='180' height='180' />
       </div>
       <div className={classes["event-detail"]}>
         <h1>{props.name}</h1>
@@ -20,11 +21,11 @@ function EventItem(props) {
           >
             <g
               fill="none"
-              fill-rule="evenodd"
+              fillRule="evenodd"
               stroke="#000"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               transform="translate(1 1)"
             >
               <rect width="18" height="18" y="2" rx="2" />
@@ -50,7 +51,7 @@ function EventItem(props) {
             <span>{props.city}</span>
           </address>
         </div>
-        <button>Explore Event  &#10132; </button>
+        <button onClick={() => {router.push(`/events/${props.id}`)}}>Explore Event  &#10132; </button>
       </div>
     </li>
   );

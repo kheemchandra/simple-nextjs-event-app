@@ -7,7 +7,7 @@
   max-width: 85vw;
   width: 65rem;
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 3rem;
   border-radius: .6rem;
   background-color: white; 
   box-shadow: 0 0 .5rem .1rem #aaa; 
@@ -31,12 +31,7 @@
 }
 
 .filter button{ 
-  background-color: #06a97d;
-  color: #aefefe;
-  border: none; 
-  padding: 1rem;
-  border-radius: .5rem; 
-  cursor: pointer;
+  padding: 1rem; 
 }
 
 @media screen and (max-width: 760px) {
